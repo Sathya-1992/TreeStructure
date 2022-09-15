@@ -1,74 +1,74 @@
 var employeeDetails = [
     {
-        name: "Maths-Staff",
-        chiefName: "1yr Faculty"
+        name: "Santhosh",
+        chiefName: "Damu"
     },
     {
-        name: "Physics-Staff",
-        chiefName: "1yr Faculty"
+        name: "Sathya",
+        chiefName: "Damu"
     },
     {
-        name: "Chemistry-Staff",
-        chiefName: "2yr Faculty"
+        name: "Muppudathi",
+        chiefName: "Damu"
     },
     {
-        name: "Maths1-Staff",
-        chiefName: "2yr Faculty"
+        name: "Ganesh",
+        chiefName: "Raghul"
     },
     {
-        name: "Biology-Staff",
-        chiefName: "2yr Faculty"
+        name: "Subha",
+        chiefName: "Vasu"
     },
     {
-        name: "Chemistry1-Staff",
-        chiefName: "3yr Faculty"
+        name: "Hari",
+        chiefName: "Vasu"
     },
     {
-        name: "Maths2-Staff",
-        chiefName: "3yr Faculty"
+        name: "Vishnu",
+        chiefName: "Vasu"
     },
     {
-        name: "Physics1-Staff",
-        chiefName: "3yr Faculty"
+        name: "Vasu",
+        chiefName: "Siva"
     },
     {
-        name: "1yr Faculty",
-        chiefName: "Maths-HOD"
+        name: "Damu",
+        chiefName: "Shibu Alexis"
     },
     {
-        name: "2yr Faculty",
-        chiefName: "Physics-HOD"
+        name: "Siva",
+        chiefName: "Shibu Alexis"
     },
     {
-        name: "3yr Faculty",
-        chiefName: "Chemistry-HOD"
+        name: "Raghul",
+        chiefName: "Shibu Alexis"
     },
     {
-        name: "Maths-HOD",
-        chiefName: "Vice Principal"
+        name: "Mani",
+        chiefName: "Sathish"
     },
     {
-        name: "Physics-HOD",
-        chiefName: "Vice Principal"
+        name: "Venkatesh",
+        chiefName: "Damu"
     },
     {
-        name: "Chemistry-HOD",
-        chiefName: "Vice Principal"
+        name: "Andrews",
+        chiefName: "Siva"
     },
     {
-        name: "Vice Principal",
-        chiefName: "Principal"
+        name: "Sathish",
+        chiefName: "Shibu Alexis"
     }
 ];
-var founder = "Principal";
+var Manager = "Shibu Alexis";
 var continentElement = document.querySelector(".container");
 var treeModel = [];
 /**
  * To generate Tree structure in json.
  */
 treeModel.push({
-    name: founder,
-    children: generateTreeModel(founder)
+    name: Manager,
+    children: generateTreeModel(Manager)
 });
 console.log(treeModel);
 /**
@@ -97,6 +97,11 @@ function generateTreeModel(searchValue) {
     return treeList;
 }
 var treeElement = "<ul>";
+/**
+ *
+ * @param tree which is used to show the tree structure
+ * @returns the string of tree structured elements
+ */
 function displayTreeModel(tree) {
     tree.forEach(function (data) {
         treeElement += "<li><div>".concat(data.name, "</div>");

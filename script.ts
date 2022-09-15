@@ -1,67 +1,67 @@
 var employeeDetails = [
     {
-        name : "Maths-Staff",
-        chiefName : "1yr Faculty"
+        name : "Santhosh",
+        mentorName : "Damu"
     },
     {
-        name : "Physics-Staff",
-        chiefName : "1yr Faculty"
+        name : "Sathya",
+        mentorName : "Damu"
     },
     {
-        name : "Chemistry-Staff",
-        chiefName : "2yr Faculty"
+        name : "Muppudathi",
+        mentorName : "Damu"
     },
     {
-        name : "Maths1-Staff",
-        chiefName : "2yr Faculty"
+        name : "Ganesh",
+        mentorName : "Raghul"
     },
     {
-        name : "Biology-Staff",
-        chiefName : "2yr Faculty"
+        name : "Subha",
+        mentorName : "Vasu"
     },
     {
-        name : "Chemistry1-Staff",
-        chiefName : "3yr Faculty"
+        name : "Hari",
+        mentorName : "Vasu"
     },
     {
-        name : "Maths2-Staff",
-        chiefName : "3yr Faculty"
+        name : "Vishnu",
+        mentorName : "Vasu"
     },
     {
-        name : "Physics1-Staff",
-        chiefName : "3yr Faculty"
+        name : "Vasu",
+        mentorName : "Siva"
     },
     {
-        name : "1yr Faculty",
-        chiefName : "Maths-HOD"
+        name : "Damu",
+        mentorName : "Shibu Alexis"
     },
     {
-        name : "2yr Faculty",
-        chiefName : "Physics-HOD"
+        name : "Siva",
+        mentorName : "Shibu Alexis"
     },
     {
-        name : "3yr Faculty",
-        chiefName : "Chemistry-HOD"
+        name : "Raghul",
+        mentorName : "Shibu Alexis"
     },
     {
-        name : "Maths-HOD",
-        chiefName : "Vice Principal"
+        name : "Mani",
+        mentorName : "Sathish"
     },
     {
-        name : "Physics-HOD",
-        chiefName : "Vice Principal"
+        name : "Venkatesh",
+        mentorName : "Damu"
     },
     {
-        name : "Chemistry-HOD",
-        chiefName : "Vice Principal"
+        name : "Andrews",
+        mentorName : "Siva"
     },
     {
-        name : "Vice Principal",
-        chiefName : "Principal"
+        name : "Sathish",
+        mentorName : "Shibu Alexis"
     }
 ];
 
-var founder:string = "Principal";
+var Manager:string = "Shibu Alexis";
 var continentElement:HTMLElement = document.querySelector(".container"); 
 
 type Tree = {
@@ -74,8 +74,8 @@ var treeModel:Tree[] = [];
  * To generate Tree structure in json.
  */
 treeModel.push({
-    name : founder,
-    children : generateTreeModel(founder)
+    name : Manager,
+    children : generateTreeModel(Manager)
 })
 console.log(treeModel)
 /**
@@ -86,7 +86,7 @@ console.log(treeModel)
 function generateTreeModel(searchValue:string):Tree[]{
     var treeList = [];
     employeeDetails.forEach((object) =>{
-        if(object.chiefName === searchValue){
+        if(object.mentorName === searchValue){
             let childrenArray = generateTreeModel(object.name);
             if(childrenArray.length === 0){
                 treeList.push({
@@ -103,7 +103,13 @@ function generateTreeModel(searchValue:string):Tree[]{
     })
     return treeList;
 }
+
 let treeElement="<ul>";
+/**
+ * 
+ * @param tree which is used to show the tree structure
+ * @returns the string of tree structured elements
+ */
 function displayTreeModel(tree:Tree[]){
     tree.forEach(function(data){
         treeElement += `<li><div>${data.name}</div>`;
